@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+      "experimentalDecorators": true,
+      "target": "es6",
+      "module": "commonjs",
+      "rootDir": "./",
+      "outDir": "./build",
+      "esModuleInterop": true,
+      "strict": true,
+      "typeRoots": [
+          "./node_modules/@types"
+      ]
+  },
+  "exclude": [
+    "node_modules"
+  ]
+}
