@@ -6,12 +6,7 @@
 
 # environment file requirements
 _.env_ file in root directory, which contains
-- добавить
-- сюда
-- переменные
-- которые 
-- будут
-- использоваться
+- тут переменные будут
 
 ## Installation
 > npm install
