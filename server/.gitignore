@@ -26,6 +26,9 @@ coverage
 node_modules
 bower_components
 
+# Logs directory
+./logs/*
+
 # Editors
 .idea
 *.iml
