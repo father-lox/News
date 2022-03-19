@@ -30,7 +30,7 @@ Build application with _tsconfig.json_
 - /api/news 
 ###### METHOD: GET
 ###### RESPONSE: All news 
-/api/news/id
+- /api/news/id
 ###### METHOD: GET
 ###### RESPONSE: All news id's array
 
