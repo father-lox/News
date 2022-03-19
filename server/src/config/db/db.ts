@@ -11,3 +11,5 @@ const db = knex({
         database: config.DB_NAME
     }
 })
+
+export default db

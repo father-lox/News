@@ -14,7 +14,6 @@ const application = (root: Router) => {
     app.use('/api', root)
 
     app.use(errorHandler)
-
     return app
 }
 
