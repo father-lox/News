@@ -26,7 +26,7 @@ Build application with _tsconfig.json_
 > npm run build
 
 ## Endpoints
-###/api/news
+### /api/news
 - /api/news 
 ###### METHOD: GET
 ###### RESPONSE: All news 
