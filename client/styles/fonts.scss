@@ -1,0 +1,29 @@
+@font-face{
+    font-family: "Noto-Sans";
+    src: url("../fonts/Noto_Sans/NotoSans-Regular.ttf") format("ttf");
+    font-style: normal; 
+    font-weight: normal;
+}
+
+//TODO - Подключить отдельное начертание шрифта NotoSans Medium
+@font-face{
+    font-family: "Noto-Sans";
+    src: url("../fonts/Noto_Sans/NotoSans-Regular.ttf") format("ttf");
+    font-style: normal;
+    font-weight: 500;
+}
+
+//TODO - Подключить отдельное начертание шрифта NotoSerif Medium
+@font-face{
+    font-family: "Noto-Serif";
+    src: url("../fonts/Noto_Serif/NotoSerif-Regular.ttf") format("ttf");
+    font-style: normal; 
+    font-weight: 500;
+}
+
+@font-face{
+    font-family: "Roboto-Slab";
+    src: url("../fonts/Roboto_Slab/RobotoSlab-Regular.ttf") format("ttf");
+    font-style: normal; 
+    font-weight: normal;
+}

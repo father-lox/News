@@ -1,0 +1,31 @@
+.button-text {
+    font-family: "Roboto-Slab", sans-serif;
+    color: $accent-color;
+    font-size: 14rem;
+    line-height: 132%;
+    background-color: transparent;
+    border: none;
+    padding: 4rem 10rem;
+    min-width: fit-content;
+    border-radius: 4rem;
+    text-transform: lowercase;
+
+    @media (min-width: 769px) {
+        &:hover {
+            color: $white-color;
+            background-color: $accent-color;    
+        }
+
+        &:active {
+            color: $white-color;
+            background-color: $black-color;    
+        }
+    }
+
+    @media (max-width: 768px) {
+        &:active {
+            color: $white-color;
+            background-color: $accent-color;    
+        }
+    }
+}
