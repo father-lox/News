@@ -7,17 +7,19 @@ const outputDirectory = './pub';
 export const path = {
     source: {
         htmlFiles: `./${clientDirectory}/pages/*/*.html`,
-        styles: `./${clientDirectory}/pages/*/style.scss`
+        styles: `./${clientDirectory}/pages/*/style.scss`,
+        fonts: `./${clientDirectory}/fonts/`
     },
 
     build: {
         htmlFiles: `./${outputDirectory}/pages/`,
-        styles: `./${outputDirectory}/pages/`
+        styles: `./${outputDirectory}/pages/`,
+        fonts: `./${clientDirectory}/fonts/`
     },
 
     watch: {
         htmlFiles: `./${clientDirectory}/**/*.html`,
-        styles: `./${clientDirectory}/**/*.scss`
+        styles: `./${clientDirectory}/**/*.scss`,
     },
 
     clear: outputDirectory
