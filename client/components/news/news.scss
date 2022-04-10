@@ -1,9 +1,11 @@
+@import '../button-text/button-text.scss';
+@import '../publisher-page-link/publisher-page-link.scss';
+@import '../news-public-statistics/news-publick-statistics.scss';
+
 .news {
-    display: flex;
-    
-    &__container {
-        max-width: 600rem;
-    }
+    position: relative;
+    padding: 0 45rem 0 0;
+    max-width: 600rem;
 
     &__title {
         @include setFontNewsTitle();
@@ -25,14 +27,17 @@
 
     &__controllers {
         display: flex;
-        justify-content: end;
+        justify-content: space-between;
         margin: 15rem 0 0;
     }
 
     &__publisher-page-links {
         display: flex;
         flex-direction: column;
-        margin: 0 0 0 20rem;
+
+        position: absolute;
+        top: 5rem;
+        right: 0;
 
         .publisher-page-link:not(:first-child) {
             margin: 10rem 0 0;

@@ -7,7 +7,7 @@ const outputDirectory = './pub';
 export const path = {
     source: {
         htmlFiles: `./${clientDirectory}/pages/*/*.html`,
-        styles: `./${clientDirectory}/pages/*/style.scss`,
+        styles: `./${clientDirectory}/pages/*/*.scss`,
         fonts: `./${clientDirectory}/fonts/`
     },
 

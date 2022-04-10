@@ -1,10 +1,10 @@
-$basePathToFontFolder: '../../fonts';
+$base-path-to-font-folder: '../../fonts';
 
 @font-face{
     font-family: "Noto-Sans";
-    src: url($basePathToFontFolder + "/Noto_Sans/NotoSans-Regular.ttf") format("opentype"),
-    url($basePathToFontFolder + "/Noto_Sans/NotoSans-Regular.woff") format("woff"),
-    url($basePathToFontFolder + "/Noto_Sans/NotoSans-Regular.woff2") format("woff2");
+    src: url($base-path-to-font-folder + "/Noto_Sans/NotoSans-Regular.ttf") format("opentype"),
+    url($base-path-to-font-folder + "/Noto_Sans/NotoSans-Regular.woff") format("woff"),
+    url($base-path-to-font-folder + "/Noto_Sans/NotoSans-Regular.woff2") format("woff2");
     font-style: normal; 
     font-weight: normal;
 }
@@ -20,9 +20,9 @@ $basePathToFontFolder: '../../fonts';
 
 @font-face{
     font-family: "Noto-Sans";
-    src: url($basePathToFontFolder + "/Noto_Sans/NotoSans-Medium.ttf") format("opentype"),
-    url($basePathToFontFolder + "/Noto_Sans/NotoSans-Medium.woff") format("woff"),
-    url($basePathToFontFolder + "/Noto_Sans/NotoSans-Medium.woff2") format("woff2");
+    src: url($base-path-to-font-folder + "/Noto_Sans/NotoSans-Medium.ttf") format("opentype"),
+    url($base-path-to-font-folder + "/Noto_Sans/NotoSans-Medium.woff") format("woff"),
+    url($base-path-to-font-folder + "/Noto_Sans/NotoSans-Medium.woff2") format("woff2");
     font-style: normal;
     font-weight: 500;
 }
@@ -39,18 +39,18 @@ $basePathToFontFolder: '../../fonts';
 
 @font-face{
     font-family: "Noto-Serif";
-    src: url($basePathToFontFolder + "/Noto_Serif/NotoSerif-Regular.ttf") format("opentype"),
-    url($basePathToFontFolder + "/Noto_Serif/NotoSerif-Regular.woff") format("woff"),
-    url($basePathToFontFolder + "/Noto_Serif/NotoSerif-Regular.woff2") format("woff2");
+    src: url($base-path-to-font-folder + "/Noto_Serif/NotoSerif-Regular.ttf") format("opentype"),
+    url($base-path-to-font-folder + "/Noto_Serif/NotoSerif-Regular.woff") format("woff"),
+    url($base-path-to-font-folder + "/Noto_Serif/NotoSerif-Regular.woff2") format("woff2");
     font-style: normal; 
     font-weight: normal;
 }
 
 @font-face{
     font-family: "Noto-Serif";
-    src: url($basePathToFontFolder + "/Noto_Serif/NotoSerif-Medium.ttf") format("opentype"),
-    url($basePathToFontFolder + "/Noto_Serif/NotoSerif-Medium.woff") format("woff"),
-    url($basePathToFontFolder + "/Noto_Serif/NotoSerif-Medium.woff2") format("woff2");
+    src: url($base-path-to-font-folder + "/Noto_Serif/NotoSerif-Medium.ttf") format("opentype"),
+    url($base-path-to-font-folder + "/Noto_Serif/NotoSerif-Medium.woff") format("woff"),
+    url($base-path-to-font-folder + "/Noto_Serif/NotoSerif-Medium.woff2") format("woff2");
     font-style: normal; 
     font-weight: 500;
 }
@@ -67,9 +67,9 @@ $basePathToFontFolder: '../../fonts';
 
 @font-face{
     font-family: "Roboto-Slab";
-    src: url($basePathToFontFolder + "/Roboto_Slab/RobotoSlab-Regular.ttf") format("opentype"),
-    url($basePathToFontFolder + "/Roboto_Slab/RobotoSlab-Regular.woff") format("woff"),
-    url($basePathToFontFolder + "/Roboto_Slab/RobotoSlab-Regular.woff2") format("woff2");
+    src: url($base-path-to-font-folder + "/Roboto_Slab/RobotoSlab-Regular.ttf") format("opentype"),
+    url($base-path-to-font-folder + "/Roboto_Slab/RobotoSlab-Regular.woff") format("woff"),
+    url($base-path-to-font-folder + "/Roboto_Slab/RobotoSlab-Regular.woff2") format("woff2");
     font-style: normal; 
     font-weight: normal;
 }
