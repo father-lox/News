@@ -5,30 +5,21 @@
         max-width: 600rem;
     }
 
-    // TODO - Определить миксин для данных настроек шрифта
     &__title {
-        font-size: 36rem;
-        font-family: 'Noto-Serif', sans-serif;
-        line-height: 136%;
+        @include setFontNewsTitle();
     }
 
     &__author-comment-section {
         margin: 25rem 0 0;
     }
     
-    // TODO - Определить миксин для данных настроек шрифта
     &__author-name {
         color: $accent-color;
-        // TODO - Поправить подключение шрифта
-        font-family: 'Noto-Sans', sans-serif;
-        font-size: 16rem;
-        line-height: 136%;
+        @include setFontDefaultMedium();
     }
 
     &__author-comment {
-        font-size: 16rem;
-        font-family: 'Noto-Sans', sans-serif;
-        line-height: 136%;
+        @include setFontDefault();
         margin: 8rem 0 0;
     }
 

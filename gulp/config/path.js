@@ -14,7 +14,8 @@ export const path = {
     build: {
         htmlFiles: `./${outputDirectory}/pages/`,
         styles: `./${outputDirectory}/pages/`,
-        fonts: `./${clientDirectory}/fonts/`
+        fonts: `./${clientDirectory}/fonts/`,
+        fontsPub: `./${outputDirectory}/fonts/`
     },
 
     watch: {

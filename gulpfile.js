@@ -4,13 +4,12 @@ import dartSass from 'sass';
 import gulpSass from 'gulp-sass';
 import fileinclude from 'gulp-file-include';
 import fs from 'fs';
-import gulpFonter from 'gulp-fonter';
+import ttf2woff from 'gulp-ttf2woff';
 import ttf2woff2 from 'gulp-ttf2woff2';
 import { path } from './gulp/config/path.js';
 
 const sass = gulpSass(dartSass);
 
-//Tasks
 function reset() {
     return del(path.clear);
 }
@@ -34,29 +33,24 @@ function compileHtml() {
         .pipe(gulp.dest(path.build.htmlFiles))
 }
 
-function convertOtfToTtf() {
-    return gulp.src(`${path.source.fonts}/*.otf`)
-        .pipe(gulpFonter({
-            formats: ['ttf']
-        }))
-        .pipe(gulp.dest(path.build.fonts));
-}
-
 function convertTtfToWoff() {
-    return gulp.src(`${path.source.fonts}/*.ttf`)
-        .pipe(gulpFonter({
-            formats: ['woff']
-        }))
-        .pipe(gulp.dest(`${path.build.fonts}/*/`))
+    return gulp.src(`${path.source.fonts}/*/*.ttf`)
+        .pipe(ttf2woff())
+        .pipe(gulp.dest(path.build.fonts))
 }
 
 function convertOtfToWoff2() {
-    return gulp.src(`${path.source.fonts}/*.ttf`)
+    return gulp.src(`${path.source.fonts}/*/*.ttf`)
         .pipe(ttf2woff2())
         .pipe(gulp.dest(path.build.fonts));
 }
 
-const fontsConverter = gulp.series(convertOtfToTtf, convertTtfToWoff, convertOtfToWoff2);
+function fontsToPub() {
+    return gulp.src(`${path.source.fonts}/**/*`)
+        .pipe(gulp.dest(path.build.fontsPub));
+}
+
+const fontsConverter = gulp.series(convertTtfToWoff, convertOtfToWoff2, fontsToPub);
 const fileProcessing = gulp.parallel(fontsConverter, compileHtml, compileSass);
 const devActions = gulp.series(reset, fileProcessing, watching);
 
