@@ -3,7 +3,6 @@ import del from 'del';
 import dartSass from 'sass';
 import gulpSass from 'gulp-sass';
 import fileinclude from 'gulp-file-include';
-import fs from 'fs';
 import ttf2woff from 'gulp-ttf2woff';
 import ttf2woff2 from 'gulp-ttf2woff2';
 import { path } from './gulp/config/path.js';
