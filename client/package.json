@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "News resource with only news headlines",
   "main": "index.js",
+  "type": "commonjs",
   "scripts": {
     "start": "nodemon index.ts",
     "build-front": "cd ./gulp && gulp && cd ../"
@@ -29,6 +30,7 @@
     "@types/express": "^4.17.13",
     "@types/express-handlebars": "^6.0.0",
     "@types/hbs": "^4.0.1",
+    "@types/node-sass-middleware": "^0.0.32",
     "del": "^6.0.0",
     "gulp": "^4.0.2",
     "gulp-file-include": "^2.3.0",
@@ -46,6 +48,7 @@
     "cors": "^2.8.5",
     "express": "^4.17.3",
     "express-handlebars": "^6.0.5",
-    "hbs": "^4.2.0"
+    "hbs": "^4.2.0",
+    "node-sass-middleware": "^1.0.1"
   }
 }

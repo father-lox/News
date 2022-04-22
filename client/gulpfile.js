@@ -1,11 +1,11 @@
-import gulp from 'gulp';
-import del from 'del';
-import dartSass from 'sass';
-import gulpSass from 'gulp-sass';
-import fileinclude from 'gulp-file-include';
-import ttf2woff from 'gulp-ttf2woff';
-import ttf2woff2 from 'gulp-ttf2woff2';
-import { path } from './gulp/config/path.js';
+const gulp = require('gulp')
+const del = require('del')
+const dartSass = require('sass')
+const gulpSass = require('gulp-sass')
+const fileinclude = require('gulp-file-include');
+const tt2woff = require('gulp-ttf2woff')
+const ttf2woff2 = require('gulp-ttf2woff2')
+const path = require('gulp/config/path').path;
 
 const sass = gulpSass(dartSass);
 
