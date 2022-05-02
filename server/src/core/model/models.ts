@@ -5,5 +5,6 @@ Users.belongsTo(News, { foreignKey: 'idUser' })
 News.hasOne(Users, { foreignKey: 'idUser' })
 
 export default {
-    Users,News
+    Users,
+    News
 }
