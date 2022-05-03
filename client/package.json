@@ -5,8 +5,9 @@
   "main": "index.js",
   "type": "commonjs",
   "scripts": {
-    "start": "nodemon index.ts",
-    "build-front": "cd ./gulp && gulp && cd ../"
+    "start": "npm run build-front build-back",
+    "build-front": "gulp",
+    "build-back": "tsc --project tsconfig.server.json"
   },
   "repository": {
     "type": "git",
@@ -37,6 +38,7 @@
     "gulp-sass": "^5.1.0",
     "gulp-ttf2woff": "^1.1.1",
     "gulp-ttf2woff2": "^4.0.1",
+    "gulp-typescript": "^6.0.0-alpha.1",
     "nodemon": "^2.0.15",
     "sass": "^1.49.9",
     "ts-node": "^10.7.0",

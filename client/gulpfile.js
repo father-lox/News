@@ -1,13 +1,14 @@
-const gulp = require('gulp')
-const del = require('del')
-const dartSass = require('sass')
-const gulpSass = require('gulp-sass')
-const fileinclude = require('gulp-file-include');
-const tt2woff = require('gulp-ttf2woff')
-const ttf2woff2 = require('gulp-ttf2woff2')
-const path = require('gulp/config/path').path;
+import gulp from 'gulp';
+import del from 'del';
+import dartSass from 'sass';
+import gulpSass from 'gulp-sass';
+import ttf2woff from 'gulp-ttf2woff';
+import ttf2woff2 from 'gulp-ttf2woff2';
+import ts from 'gulp-typescript';
+import { path } from './gulp/config/path.js';
 
 const sass = gulpSass(dartSass);
+const tsProject = ts.createProject('tsconfig.client.json');
 
 function reset() {
     return del(path.clear);
@@ -15,7 +16,7 @@ function reset() {
 
 function watching() {
     gulp.watch(path.watch.styles, compileSass);
-    gulp.watch(path.watch.htmlFiles, compileHtml);
+    gulp.watch(path.watch.typescript, compileTypeScript);
 }
 
 function compileSass() {
@@ -26,10 +27,8 @@ function compileSass() {
         .pipe(gulp.dest(path.build.styles))
 }
 
-function compileHtml() {
-    return gulp.src(path.source.htmlFiles)
-        .pipe(fileinclude())
-        .pipe(gulp.dest(path.build.htmlFiles))
+function compileTypeScript() {
+    return tsProject.src().pipe(tsProject()).js.pipe(gulp.dest(path.build.typescript));
 }
 
 function convertTtfToWoff() {
@@ -44,13 +43,9 @@ function convertOtfToWoff2() {
         .pipe(gulp.dest(path.build.fonts));
 }
 
-function fontsToPub() {
-    return gulp.src(`${path.source.fonts}/**/*`)
-        .pipe(gulp.dest(path.build.fontsPub));
-}
 
-const fontsConverter = gulp.series(convertTtfToWoff, convertOtfToWoff2, fontsToPub);
-const fileProcessing = gulp.parallel(fontsConverter, compileHtml, compileSass);
-const devActions = gulp.series(reset, fileProcessing, watching);
+const fontsConverter = gulp.series(convertTtfToWoff, convertOtfToWoff2);
+const fileProcessing = gulp.parallel(compileTypeScript, compileSass);
+const devActions = gulp.series(reset, fileProcessing, fontsConverter, watching);
 
 gulp.task('default', devActions);

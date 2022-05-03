@@ -1,26 +1,23 @@
-import * as nodePath from 'path';
-
-const rootDirectory = nodePath.basename(nodePath.resolve());
 const clientDirectory = './';
-const outputDirectory = './pub/';
+const outputDirectory = './public/';
 
 export const path = {
     source: {
-        htmlFiles: `${clientDirectory}pages/*/*.html`,
         styles: `${clientDirectory}pages/*/*.scss`,
-        fonts: `${clientDirectory}fonts/`
+        fonts: `${clientDirectory}fonts/`,
+        typescript: `${clientDirectory}**/*.ts`
     },
 
     build: {
-        htmlFiles: `${outputDirectory}pages/`,
         styles: `${outputDirectory}pages/`,
-        fonts: `${clientDirectory}fonts/`,
-        fontsPub: `${outputDirectory}fonts/`
+        fonts: `${outputDirectory}fonts/`,
+        typescript: `${outputDirectory}`  
     },
 
     watch: {
         htmlFiles: `${clientDirectory}**/*.html`,
         styles: `${clientDirectory}**/*.scss`,
+        typescript: `${clientDirectory}**/*.ts`,
     },
 
     clear: outputDirectory
