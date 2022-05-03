@@ -3,10 +3,11 @@
   "version": "1.0.0",
   "description": "News resource with only news headlines",
   "main": "index.js",
-  "type": "module",
+  "type": "commonjs",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build-front": "cd ./gulp && gulp && cd ../"
+    "start": "npm run build-front build-back",
+    "build-front": "gulp",
+    "build-back": "tsc --project tsconfig.server.json"
   },
   "repository": {
     "type": "git",
@@ -24,13 +25,32 @@
   },
   "homepage": "https://github.com/father-lox/News#readme",
   "devDependencies": {
+    "@types/body-parser": "^1.19.2",
+    "@types/cookie-parser": "^1.4.2",
+    "@types/cors": "^2.8.12",
+    "@types/express": "^4.17.13",
+    "@types/express-handlebars": "^6.0.0",
+    "@types/hbs": "^4.0.1",
+    "@types/node-sass-middleware": "^0.0.32",
     "del": "^6.0.0",
     "gulp": "^4.0.2",
     "gulp-file-include": "^2.3.0",
     "gulp-sass": "^5.1.0",
     "gulp-ttf2woff": "^1.1.1",
     "gulp-ttf2woff2": "^4.0.1",
+    "gulp-typescript": "^6.0.0-alpha.1",
+    "nodemon": "^2.0.15",
     "sass": "^1.49.9",
+    "ts-node": "^10.7.0",
     "typescript": "^4.6.2"
+  },
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "express": "^4.17.3",
+    "express-handlebars": "^6.0.5",
+    "hbs": "^4.2.0",
+    "node-sass-middleware": "^1.0.1"
   }
 }

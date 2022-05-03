@@ -6,3 +6,4 @@
 ## Install project dependencies
 * In the client folder run the command `npm i`
 * After installation run script `npm run build-front`
+* To run application and watch changes run script `npm run start`
