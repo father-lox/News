@@ -8,7 +8,6 @@ export default class News extends Sequelize.Model {
     authorComment?: string
     date?: Date
     idUser?: number
-    User?: Users
 }
 
 News.init({

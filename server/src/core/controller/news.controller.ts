@@ -7,6 +7,9 @@ class NewsController {
         res.json(await newsService.findAll())
     }
 
+    async create(req: Request, res: Response, next: NextFunction) {
+
+    }
 }
 
 export default new NewsController()

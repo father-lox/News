@@ -7,7 +7,7 @@
   "license": "ISC",
   "scripts": {
     "start": "nodemon index.ts",
-    "build": "npx tsc -p  .\\tsconfig.json"
+    "build": "npx tsc -p  tsconfig.json"
   },
   "devDependencies": {
     "@types/body-parser": "^1.19.2",
