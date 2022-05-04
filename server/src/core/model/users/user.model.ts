@@ -1,5 +1,5 @@
 import * as Sequelize from "sequelize";
-import db, {dbConfig} from "../../db/db";
+import db, {dbConfig} from "../../../db/db";
 
 export default class Users extends Sequelize.Model {
     public idUser?: number

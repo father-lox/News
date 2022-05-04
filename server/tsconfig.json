@@ -5,6 +5,7 @@
       "module": "commonjs",
       "rootDir": "./",
       "outDir": "./build",
+      "resolveJsonModule": true,
       "esModuleInterop": true,
       "strict": true,
       "typeRoots": [

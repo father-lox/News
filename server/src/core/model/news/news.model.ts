@@ -1,6 +1,6 @@
 import * as Sequelize from "sequelize";
-import db, {dbConfig} from "../../db/db";
-import Users from "./user.model";
+import db, {dbConfig} from "../../../db/db";
+import Users from "../users/user.model";
 
 export default class News extends Sequelize.Model {
     idNews?: number

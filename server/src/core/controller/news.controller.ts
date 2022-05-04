@@ -1,5 +1,5 @@
 import {NextFunction, Request, Response} from "express";
-import newsService from "../services/news.service";
+import newsService from "../service/news/news.service";
 
 class NewsController {
 
@@ -7,9 +7,7 @@ class NewsController {
         res.json(await newsService.findAll())
     }
 
-    async create(req: Request, res: Response, next: NextFunction) {
 
-    }
 }
 
 export default new NewsController()
