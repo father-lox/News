@@ -1,6 +1,8 @@
 import * as Sequelize from "sequelize";
 import db, {dbConfig} from "../../../db/db";
 import Users from "../users/user.model";
+import Views from "./views.model";
+import Comments from "./comments.model";
 
 export default class News extends Sequelize.Model {
     idNews?: number
@@ -8,6 +10,9 @@ export default class News extends Sequelize.Model {
     authorComment?: string
     date?: Date
     idUser?: number
+    User?: Users
+    View?: Views
+    Comments?: Comments[]
 }
 
 News.init({

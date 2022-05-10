@@ -7,7 +7,6 @@ class NewsController {
         res.json(await newsService.findAll())
     }
 
-
 }
 
 export default new NewsController()
