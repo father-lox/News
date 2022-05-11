@@ -1,11 +1,10 @@
-const gulp = require('gulp')
-const del = require('del')
-const dartSass = require('sass')
-const gulpSass = require('gulp-sass')
-const fileinclude = require('gulp-file-include');
-const tt2woff = require('gulp-ttf2woff')
-const ttf2woff2 = require('gulp-ttf2woff2')
-const path = require('gulp/config/path').path;
+import gulp from 'gulp';
+import del from 'del';
+import dartSass from 'sass';
+import gulpSass from 'gulp-sass';
+import ttf2woff from 'gulp-ttf2woff';
+import ttf2woff2 from 'gulp-ttf2woff2';
+import { path } from './gulp/config/path.js';
 
 const sass = gulpSass(dartSass);
 
@@ -15,7 +14,6 @@ function reset() {
 
 function watching() {
     gulp.watch(path.watch.styles, compileSass);
-    gulp.watch(path.watch.htmlFiles, compileHtml);
 }
 
 function compileSass() {
@@ -26,11 +24,6 @@ function compileSass() {
         .pipe(gulp.dest(path.build.styles))
 }
 
-function compileHtml() {
-    return gulp.src(path.source.htmlFiles)
-        .pipe(fileinclude())
-        .pipe(gulp.dest(path.build.htmlFiles))
-}
 
 function convertTtfToWoff() {
     return gulp.src(`${path.source.fonts}/*/*.ttf`)
@@ -50,7 +43,7 @@ function fontsToPub() {
 }
 
 const fontsConverter = gulp.series(convertTtfToWoff, convertOtfToWoff2, fontsToPub);
-const fileProcessing = gulp.parallel(fontsConverter, compileHtml, compileSass);
+const fileProcessing = gulp.parallel(fontsConverter, compileSass);
 const devActions = gulp.series(reset, fileProcessing, watching);
 
 gulp.task('default', devActions);

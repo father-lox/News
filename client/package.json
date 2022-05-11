@@ -1,0 +1,37 @@
+{
+  "name": "news",
+  "version": "1.0.0",
+  "description": "News resource with only news headlines",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "build-front": "cd ./gulp && gulp && cd ../"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/father-lox/News.git"
+  },
+  "keywords": [
+    "news",
+    "web",
+    "ts"
+  ],
+  "author": "S. Makarov, A. Levchenko",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/father-lox/News/issues"
+  },
+  "homepage": "https://github.com/father-lox/News#readme",
+  "devDependencies": {
+    "del": "^6.0.0",
+    "gulp": "^4.0.2",
+    "gulp-file-include": "^2.3.0",
+    "gulp-sass": "^5.1.0",
+    "gulp-ttf2woff": "^1.1.1",
+    "gulp-ttf2woff2": "^4.0.1",
+    "sass": "^1.49.9"
+  },
+  "dependencies": {
+
+  }
+}
