@@ -2,9 +2,9 @@
   "compilerOptions": {
     "experimentalDecorators": true,
     "target": "es6",
-    "module": "commonjs",
+    "module": "ES6",
     "rootDir": "./",
-    "outDir": "./public",
+    "outDir": "./pub",
     "esModuleInterop": true,
     "strict": true,
     "typeRoots": [

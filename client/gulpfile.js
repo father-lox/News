@@ -8,7 +8,7 @@ import ts from 'gulp-typescript';
 import { path } from './gulp/config/path.js';
 
 const sass = gulpSass(dartSass);
-const tsProject = ts.createProject('tsconfig.client.json');
+const tsProject = ts.createProject('tsconfig.json');
 
 function reset() {
     return del(path.clear);
@@ -31,6 +31,11 @@ function compileTypeScript() {
     return tsProject.src().pipe(tsProject()).js.pipe(gulp.dest(path.build.typescript));
 }
 
+function moveTtf() {
+    return gulp.src(`${path.source.fonts}/*/*.ttf`)
+        .pipe(gulp.dest(path.build.fonts))
+}
+
 function convertTtfToWoff() {
     return gulp.src(`${path.source.fonts}/*/*.ttf`)
         .pipe(ttf2woff())
@@ -44,7 +49,7 @@ function convertOtfToWoff2() {
 }
 
 
-const fontsConverter = gulp.series(convertTtfToWoff, convertOtfToWoff2);
+const fontsConverter = gulp.series(moveTtf, convertTtfToWoff, convertOtfToWoff2);
 const fileProcessing = gulp.parallel(compileTypeScript, compileSass);
 const devActions = gulp.series(reset, fileProcessing, fontsConverter, watching);
 
