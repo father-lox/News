@@ -7,7 +7,7 @@
   "scripts": {
     "start": "npm run build-front build-back",
     "build-front": "gulp",
-    "build-back": "tsc --project tsconfig.server.json"
+    "build-back": "cd server && npm run start && cd ../"
   },
   "repository": {
     "type": "git",

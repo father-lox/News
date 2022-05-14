@@ -1,5 +1,5 @@
 const clientDirectory = './';
-const outputDirectory = './public/';
+const outputDirectory = './pub/';
 
 export const path = {
     source: {

@@ -1,1 +1,3 @@
-let x: number = 1025 + 19;
+export default function hello(compiler: string) {
+    console.log(`Hello from ${compiler}`);
+}
