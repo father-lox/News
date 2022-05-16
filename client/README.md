@@ -5,5 +5,5 @@
 
 ## Install project dependencies
 * In the client folder run the command `npm i`
-* After installation run script `npm run build-front`
-* To run application and watch changes run script `npm run start`
+* After installation run scripts `npm run build-front` and `npm run build-back` from `client` folder
+* Open site in your browser by URL `http://localhost:3000/`
