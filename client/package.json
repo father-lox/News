@@ -5,9 +5,8 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "npm run build-front build-back",
     "build-front": "gulp",
-    "build-back": "cd server && npm run start && cd ../"
+    "build-back": "cd server && npm run start"
   },
   "repository": {
     "type": "git",
