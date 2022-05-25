@@ -1,17 +1,16 @@
 <div id="news" class="news">
-    <h1 class="news__title" data-role="news-title">Sunt aut facere repellat provident occaecati excepturi optio reprehenderit</h1>
+    <h1 class="news__title" data-role="news-title">{{ context.heading }}</h1>
     <div class="news__author-comment-section">
-        <p class="news__author-name" data-role="news-author">Comment by Proskurlyakov</p>
-        <p class="news__author-comment" data-role="news-comment">Ultricies diam parturient lectus nec tortor sagittis. Quis nisi etiam iaculis tincidunt nunc sapien magnis. In dolor placerat nulla in massa viverra phasellus in. Sed diam risus, facilisis bibendum laoreet condimentum id.</p>
+        <p class="news__author-name" data-role="news-author">Comment by {{ context.User.login }}</p>
+        <p class="news__author-comment" data-role="news-comment">{{ context.authorComment }}</p>
     </div>
     <div class="news__controllers">
         {{> newsPublickStatistics/newsPublickStatistics }}
         <button class="button-text" data-role="news-comment-button">Комментировать</button>
     </div>
     <div class="news__publisher-page-links">
-        {{> publisherPageLink/publisherPageLink }}
-        {{> publisherPageLink/publisherPageLink }}
-        {{> publisherPageLink/publisherPageLink }}
-        {{> publisherPageLink/publisherPageLink }}
+        {{#each context.PublisherPages}}
+            {{> publisherPageLink/publisherPageLink this }}
+        {{/each}}
     </div>
 </div>
