@@ -1,0 +1,7 @@
+<ul class="comment-list">
+    {{#each context.Comments }}
+        <li class="comment-list__item">
+            {{> comment/comment this }}
+        </li>
+    {{/each}}
+</ul>

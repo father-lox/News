@@ -1,0 +1,20 @@
+.comment {
+    @include setFontDefault(14rem);
+
+    &__nickname {
+        color: $accent-color;
+
+        &_writer {
+            @include setFontDefaultMedium();
+        }
+    }
+
+    &__text {
+        margin: 8rem 0 0;
+        color: $black-color;
+
+        &_writer {
+            font-size: 16rem;
+        }
+    }
+}
