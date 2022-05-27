@@ -1,0 +1,21 @@
+<div class="comment">
+    <p class="comment__nickname {{#if isWriterComment}}comment__nickname_writer{{/if}}" data-role="news-author">
+        Comment by
+        {{#if isWriterComment}}
+            {{context.User.login}}
+        {{else}}
+             {{#if idUser }}
+                 idUser
+             {{else}}
+                 Unknown
+             {{/if}}
+        {{/if}}
+    </p>
+    <p class="comment__text {{#if isWriterComment}}comment__text_writer{{/if}}" data-role="news-comment">
+        {{#if isWriterComment}}
+            {{context.authorComment}}
+        {{else}}
+            {{content}}
+        {{/if}}
+    </p>
+</div>
