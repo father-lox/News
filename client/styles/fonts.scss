@@ -1,6 +1,6 @@
 $base-path-to-font-folder: '../../fonts';
 
-@font-face{
+@font-face {
     font-family: "Noto-Sans";
     src: url($base-path-to-font-folder + "/Noto_Sans/NotoSans-Regular.ttf") format("opentype"),
     url($base-path-to-font-folder + "/Noto_Sans/NotoSans-Regular.woff") format("woff"),

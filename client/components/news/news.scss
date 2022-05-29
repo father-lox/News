@@ -1,7 +1,9 @@
-@import '../button-text/button-text.scss';
+@import '../button-text/button-text';
 @import '../publisherPageLink/publisherPageLink';
 @import '../newsPublickStatistics/newsPublickStatistics';
 @import '../field/field';
+@import '../commentList/commentList';
+@import '../comment/comment';
 
 .news {
     position: relative;
@@ -10,20 +12,6 @@
 
     &__title {
         @include setFontNewsTitle();
-    }
-
-    &__author-comment-section {
-        margin: 25rem 0 0;
-    }
-    
-    &__author-name {
-        color: $accent-color;
-        @include setFontDefaultMedium();
-    }
-
-    &__author-comment {
-        @include setFontDefault();
-        margin: 8rem 0 0;
     }
 
     &__controllers {
@@ -60,4 +48,21 @@
         align-self: flex-end;
         max-height: 26rem;
     }
+
+    &__comments {
+        margin: 20rem 0 0;
+    }
+
+    & > .comment {
+        margin: 25rem 0 0;
+    }
+
+    .button-text {
+        width: 144rem;
+        height: 26rem;
+    }
+}
+
+.hidden {
+    display: none;
 }

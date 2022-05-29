@@ -1,0 +1,11 @@
+.comment-list {
+    padding: 0 25rem 0;
+
+    &__item {
+        padding: 12rem 0;
+        
+        :not(:first-child) {
+            margin: 10rem 0 0;
+        }
+    }
+}
