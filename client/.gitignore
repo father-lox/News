@@ -11,3 +11,5 @@ Thumbs.db
 
 pub
 package-lock.json
+
+components/**/doc/assets
