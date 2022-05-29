@@ -7,6 +7,16 @@
     min-width: fit-content;
     border-radius: 4rem;
 
+    &_accent {
+        border: 1rem solid;
+
+        @media (min-width: 769px) {
+            &:active {
+                border-color: $black-color;
+            }
+        }
+    }
+
     @media (min-width: 769px) {
         &:hover {
             color: $white-color;
