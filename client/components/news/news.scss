@@ -1,6 +1,7 @@
 @import '../button-text/button-text.scss';
 @import '../publisherPageLink/publisherPageLink';
 @import '../newsPublickStatistics/newsPublickStatistics';
+@import '../field/field';
 
 .news {
     position: relative;
@@ -29,6 +30,11 @@
         display: flex;
         justify-content: space-between;
         margin: 15rem 0 0;
+
+        .button-text {
+            width: 144rem;
+            height: 26rem;
+        }
     }
 
     &__publisher-page-links {
@@ -44,8 +50,14 @@
         }
     }
 
-    .button-text {
-        width: 144rem;
-        height: 26rem;
+    &__comment-form {
+        margin: 48rem 0 0;
+        display: grid;
+        grid-template-columns: auto minmax(auto, 100rem);
+    }
+
+    &__send-comment {
+        align-self: flex-end;
+        max-height: 26rem;
     }
 }
