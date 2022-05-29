@@ -48,9 +48,14 @@ function convertOtfToWoff2() {
         .pipe(gulp.dest(path.build.fonts));
 }
 
+function moveImages() {
+    return gulp.src(`${path.source.images}`)
+        .pipe(gulp.dest(path.build.images))
+}
+
 
 const fontsConverter = gulp.series(moveTtf, convertTtfToWoff, convertOtfToWoff2);
-const fileProcessing = gulp.parallel(compileTypeScript, compileSass);
+const fileProcessing = gulp.parallel(compileTypeScript, compileSass, moveImages);
 const devActions = gulp.series(reset, fileProcessing, fontsConverter, watching);
 
 gulp.task('default', devActions);

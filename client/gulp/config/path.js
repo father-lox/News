@@ -5,13 +5,15 @@ export const path = {
     source: {
         styles: `${clientDirectory}pages/*/*.scss`,
         fonts: `${clientDirectory}fonts/`,
-        typescript: `${clientDirectory}**/*.ts`
+        typescript: `${clientDirectory}**/*.ts`,
+        images: `${clientDirectory}img/**/*`
     },
 
     build: {
         styles: `${outputDirectory}pages/`,
         fonts: `${outputDirectory}fonts/`,
-        typescript: `${outputDirectory}`  
+        typescript: `${outputDirectory}`,
+        images: `${outputDirectory}img/`
     },
 
     watch: {
