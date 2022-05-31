@@ -6,6 +6,7 @@ const router = Router()
 
 router.post('/login', authController.login)
 router.post('/registration', authController.register)
+router.post('/registration_writer', authController.register_writer)
 router.post('/token', auth, (req, res) => {res.send('hello')})
 
 export default router

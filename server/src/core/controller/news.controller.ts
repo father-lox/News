@@ -7,6 +7,9 @@ class NewsController {
         res.json(await newsService.findAll())
     }
 
+    async getRandom(req: Request, res: Response, next: NextFunction) {
+        res.json(await newsService.findRandom())
+    }
 }
 
 export default new NewsController()

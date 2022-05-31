@@ -18,19 +18,21 @@ class AuthController {
         if (user == null) {
             next(ApiError.BadRequest('user not found'))
         }
-        let hash = <string>user?.password?.replace(new RegExp(' ', 'g'), '');
-        if (await bcrypt.compare(password, hash)) {
-            let token = jwt.sign({
-                id: user?.idUser,
-                login: user?.login,
-                role: user?.idRole
-            }, app_config.key, {
-                expiresIn: app_config.jwt_expires_in
-            })
-            res.json({ token })
-        }
         else {
-            next(ApiError.BadRequest('password does not match'))
+            let hash = <string>user?.password?.replace(new RegExp(' ', 'g'), '');
+            if (await bcrypt.compare(password, hash)) {
+                let token = jwt.sign({
+                    id: user?.idUser,
+                    login: user?.login,
+                    role: user?.idRole
+                }, app_config.key, {
+                    expiresIn: app_config.jwt_expires_in
+                })
+                res.json({ token })
+            }
+            else {
+                next(ApiError.BadRequest('password does not match'))
+            }
         }
     }
 
@@ -42,15 +44,40 @@ class AuthController {
             }
         })
         if (user != null) {
-            ApiError.BadRequest('login is already exists')
+            next(ApiError.BadRequest('login is already exists'))
         }
-        let hash = await bcrypt.hash(password, 10)
+        else {
+            let hash = await bcrypt.hash(password, 10)
 
-        await Users.create({
-            login: login,
-            password: hash,
-            idRole: 2
-        }).catch(next)
+            await Users.create({
+                login: login,
+                password: hash,
+                idRole: 2
+            }).catch(next)
+            res.send('success')
+        }
+    }
+
+    async register_writer(req: Request, res: Response, next: NextFunction) {
+        let {login, password} = req.body
+        let user = await Users.findOne({
+            where: {
+                login: login
+            }
+        })
+        if (user != null) {
+            next(ApiError.BadRequest('login is already exists'))
+        }
+        else {
+            let hash = await bcrypt.hash(password, 10)
+
+            await Users.create({
+                login: login,
+                password: hash,
+                idRole: 1
+            }).catch(next)
+            res.send('success')
+        }
     }
 }
 
