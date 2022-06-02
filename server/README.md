@@ -17,3 +17,5 @@ Starts application with nodemon and watch changes in files
 
 Build application with _tsconfig.json_
 > npm run build
+
+## API

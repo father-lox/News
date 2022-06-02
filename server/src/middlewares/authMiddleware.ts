@@ -5,7 +5,7 @@ import {app_config} from "../config/config";
 
 export default function (req: Request, res: Response, next: NextFunction) {
     const token =
-        req.body.token || req.query.token || req.headers["x-access-token"];
+        req.body.token || req.query.token || req.headers["Bearer"];
 
     if (!token) {
         next(ApiError.Unauthorized('no token provided'))
