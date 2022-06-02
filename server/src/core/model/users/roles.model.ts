@@ -20,3 +20,7 @@ Roles.init({
     }
 }, dbConfig('Roles'))
 
+export enum RoleEnum {
+    WRITER = 1,
+    READER,
+}

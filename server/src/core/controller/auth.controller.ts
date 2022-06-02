@@ -4,6 +4,7 @@ import Users from "../model/users/user.model";
 import {app_config} from "../../config/config";
 import ApiError from "../../error/ApiError";
 import jwt from "jsonwebtoken";
+import {RoleEnum} from "../model/users/roles.model";
 
 
 class AuthController {
@@ -52,7 +53,7 @@ class AuthController {
             await Users.create({
                 login: login,
                 password: hash,
-                idRole: 2
+                idRole: RoleEnum.READER
             }).catch(next)
             res.send('success')
         }
@@ -74,7 +75,7 @@ class AuthController {
             await Users.create({
                 login: login,
                 password: hash,
-                idRole: 1
+                idRole: RoleEnum.WRITER
             }).catch(next)
             res.send('success')
         }
