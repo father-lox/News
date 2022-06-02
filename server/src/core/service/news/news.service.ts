@@ -28,6 +28,29 @@ class NewsService {
         return qres[random]
     }
 
+    async create() {
+
+    }
+
+    async getById(id: number) {
+        let qres = await m.News.findOne({
+            where: {
+                idNews: id
+            },
+            include: [
+                {model: m.Users},
+                {model: m.Views},
+                {model: m.Comments},
+                {model: m.Rubrics},
+                {model: m.PublisherPage, include: [{model: m.Publishers}]}
+            ]
+        })
+
+        if (qres == null) {
+            return {}
+        }
+        return qres
+    }
 }
 
 export default new NewsService()

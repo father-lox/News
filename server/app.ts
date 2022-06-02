@@ -3,6 +3,7 @@ import express, {NextFunction, Request, Response, Router} from "express"
 import bodyParser from "body-parser";
 import cookieParser from "cookie-parser";
 import ApiError from "./src/error/ApiError";
+import userFromHeader from "./src/middlewares/userFromHeader";
 
 function errorhandler(err: Error, req: Request, res: Response, next: NextFunction) {
     console.log('ERROR')
@@ -34,6 +35,7 @@ export default (root: Router, apiUrl: string) => {
     app.use(bodyParser.urlencoded({extended: true}))
     app.use(cookieParser())
 
+    app.use(userFromHeader)
     app.use(`/${apiUrl}`, root)
 
     // Error handler
