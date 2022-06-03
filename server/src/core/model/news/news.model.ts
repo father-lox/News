@@ -15,6 +15,10 @@ export default class News extends Sequelize.Model {
     Comments?: Comments[]
 }
 
+Sequelize.DATE.prototype._stringify = function _stringify(date: any, options: any) {
+    return this._applyTimezone(date, options).format('YYYY-MM-DD HH:mm:ss.SSS');
+};
+
 News.init({
     idNews: {
         type: Sequelize.INTEGER,
@@ -31,7 +35,8 @@ News.init({
     },
     date: {
         type: Sequelize.DATE,
-        allowNull: false
+        allowNull: false,
+        defaultValue: Sequelize.NOW
     },
     idUser: {
         type: Sequelize.INTEGER,

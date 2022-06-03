@@ -54,24 +54,17 @@ class AuthController {
     }
 
     async register_writer(req: Request, res: Response, next: NextFunction) {
-        let {login, password} = req.body
-        let user = await Users.findOne({
-            where: {
-                login: login
-            }
-        })
-        if (user != null) {
-            next(ApiError.BadRequest('login is already exists'))
+        let {login, password, email} = req.body
+        if (login == null || password == null || email == null) {
+            return next(ApiError.BadRequest('invalid body params'))
         }
-        else {
-            let hash = await bcrypt.hash(password, 10)
 
-            await Users.create({
-                login: login,
-                password: hash,
-                idRole: RoleEnum.WRITER
-            }).catch(next)
-            res.send('success')
+        try {
+            await userService.create({login, password, email}, RoleEnum.WRITER);
+            res.sendStatus(200)
+        }
+        catch (e) {
+            return next(e)
         }
     }
 }

@@ -1,4 +1,5 @@
 import m from "../../model/models";
+import models from "../../model/models";
 
 class NewsService {
 
@@ -28,8 +29,17 @@ class NewsService {
         return qres[random]
     }
 
-    async create() {
-
+    async create(heading: string, comment: string, idUser: number) {
+        let news = await models.News.create({
+            heading,
+            authorComment: comment,
+            idUser,
+            date: new Date().toISOString()
+        })
+        await models.Views.create({
+            idNews: news.idNews,
+            count: 0
+        })
     }
 
     async getById(id: number) {

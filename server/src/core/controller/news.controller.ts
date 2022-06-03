@@ -21,12 +21,17 @@ class NewsController {
     }
 
     async post(req: Request, res: Response, next: NextFunction) {
-        let header = req.headers["authorization"]
-        if (header != null) {
-            let token = header.split(' ')[1]
+        let {heading, comment} = req.body
+        if (heading == null || comment == null) {
+            return next(ApiError.BadRequest('invalid body'))
         }
-        else {
-            next(ApiError.Unauthorized("No token provided"))
+
+        try {
+            await newsService.create(heading, comment, res.locals['user'].id)
+            res.sendStatus(200)
+        }
+        catch (e) {
+            return next(e)
         }
     }
 }

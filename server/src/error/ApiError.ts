@@ -22,9 +22,12 @@ class ApiError extends Error {
     }
 
     public static Unauthorized(reason: string) : ApiError {
-        return new ApiError(403, reason)
+        return new ApiError(401, reason)
     }
 
+    static Forbidden(reason: string) {
+        return new ApiError(403, reason)
+    }
 }
 
 export default ApiError;
