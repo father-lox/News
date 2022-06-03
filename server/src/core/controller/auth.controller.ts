@@ -5,6 +5,7 @@ import {app_config} from "../../config/config";
 import ApiError from "../../error/ApiError";
 import jwt from "jsonwebtoken";
 import {RoleEnum} from "../model/users/roles.model";
+import userService from "../service/user/user.service";
 
 
 class AuthController {
@@ -38,24 +39,17 @@ class AuthController {
     }
 
     async register(req: Request, res: Response, next: NextFunction) {
-        let {login, password} = req.body
-        let user = await Users.findOne({
-            where: {
-                login: login
-            }
-        })
-        if (user != null) {
-            next(ApiError.BadRequest('login is already exists'))
+        let {login, password, email} = req.body
+        if (login == null || password == null || email == null) {
+            return next(ApiError.BadRequest('invalid body params'))
         }
-        else {
-            let hash = await bcrypt.hash(password, 10)
 
-            await Users.create({
-                login: login,
-                password: hash,
-                idRole: RoleEnum.READER
-            }).catch(next)
-            res.send('success')
+        try {
+            await userService.create({login, password, email}, RoleEnum.READER);
+            res.sendStatus(200)
+        }
+        catch (e) {
+            return next(e)
         }
     }
 
