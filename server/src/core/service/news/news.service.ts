@@ -61,6 +61,14 @@ class NewsService {
         }
         return qres
     }
+
+    async getByUser(userId: number) {
+        return await models.News.findAll({
+            where: {
+                idUser: userId
+            }
+        })
+    }
 }
 
 export default new NewsService()

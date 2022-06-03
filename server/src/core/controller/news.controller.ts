@@ -34,6 +34,11 @@ class NewsController {
             return next(e)
         }
     }
+
+    async getByUser(req: Request, res: Response, next: NextFunction) {
+        let userId = res.locals['user'].id
+        res.json(await newsService.getByUser(userId))
+    }
 }
 
 export default new NewsController()
