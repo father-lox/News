@@ -30,6 +30,13 @@ class AuthController {
                 }, app_config.key, {
                     expiresIn: app_config.jwt_expires_in
                 })
+
+                res.clearCookie('authorization')
+                res.cookie('authorization', token, {
+                    maxAge: 2 * 60 * 60 * 1000,
+                    httpOnly: true
+                })
+
                 res.json({ token })
             }
             else {
@@ -37,6 +44,12 @@ class AuthController {
             }
         }
     }
+
+    async logout(req: Request, res: Response, next: NextFunction) {
+        res.clearCookie('authorization')
+        res.sendStatus(200)
+    }
+
 
     async register(req: Request, res: Response, next: NextFunction) {
         let {login, password, email} = req.body

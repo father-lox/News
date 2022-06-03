@@ -11,8 +11,13 @@ const db_config = {
         port: String(process.env.APP_PORT),
         key: String(process.env.APP_KEY),
         jwt_expires_in: String(process.env.APP_JWT_EXPIRES)
+    },
+    email_config = {
+        login: String(process.env.EMAIL_USER),
+        password: String(process.env.EMAIL_PASS)
     }
 export {
     db_config,
-    app_config
+    app_config,
+    email_config
 }
