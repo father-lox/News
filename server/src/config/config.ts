@@ -6,6 +6,7 @@ const db_config = {
         password: String(process.env.DB_PASS),
         host: String(process.env.DB_HOST),
         port: Number(process.env.DB_PORT),
+        dialect: <any>process.env.DB_DIALECT
     },
     app_config = {
         port: String(process.env.APP_PORT),
