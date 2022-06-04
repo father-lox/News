@@ -1,7 +1,7 @@
 import emailConnection from "../email/email.config";
 import {email_config} from "../config/config";
 
-export  function sendVerifyWriter (to: string) {
+export  function sendVerifyWriter (to: string, name: string, redirect: string) {
     const mailOptions = {
         from: email_config.login,
         to: to,
@@ -15,7 +15,9 @@ export  function sendVerifyWriter (to: string) {
             subject: 'Регистрация автора на портале новостей',
             html:
             `
-                
+                <p>Добрый день, ${name}.</p>
+                <p>Для того, чтобы закончить процесс становления автором, перейдите по: </p>
+                <a href="//${redirect}">ссылке</a>
             `
         },
         function(err, info) {
