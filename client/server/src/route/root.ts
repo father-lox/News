@@ -19,4 +19,8 @@ route.get('/singin', async (req, res) => {
     res.render('singIn/singIn.hbs', {layout: false})
 })
 
+route.get('/singup', async (req, res) => {
+    res.render('singUp/singUp.hbs', {layout: false})
+})
+
 export default route
