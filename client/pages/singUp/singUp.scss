@@ -1,0 +1,28 @@
+@import '../../styles/general.scss';
+
+@import './css/singUpForm.scss';
+
+@import '../../components/field/field.scss';
+@import '../../components/button-text/button-text.scss';
+@import '../../components/errorNote/errorNote.scss';
+@import '../../components/navigation/navigation.scss';
+@import '../../components/navigationItem/navigationItem.scss';
+
+.sing-up {
+    max-width: 560rem;
+    margin: 0 auto;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .navigation {
+        width: 100%;
+        margin: 0 0 23rem;
+    }
+
+    .sing-up-form {
+        width: 100%;
+    }
+}

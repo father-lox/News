@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/pages/singUp/singUp.css">
+    <title>News Sing Un</title>
+</head>
+<body>
+    <main class="sing-up">
+        <nav class="navigation">
+            <ul class="navigation__list-links">
+                {{> navigationItem/navigationItem
+                    path='/'
+                    imageAbsolutePath='/img/iconsSolidRedColor/Home.svg'
+                    label='Домой'
+                }}
+            </ul>
+        </nav>
+        <form class="sing-up-form" id="sing-up-from" method="post" action="#">
+            {{> field/field fieldLabel='ваш логин' fieldName='login' inputType='text' noteText='использоваться при авторизации' absolutePathToFieldIcon='/img/iconsSolidColor/User.svg'}}
+            {{> field/field fieldLabel='ваш пароль' fieldName='password' inputType='password' noteText='защитите ваш аккаунт паролем' absolutePathToFieldIcon='/img/iconsSolidColor/Lock.svg'}}
+            {{> field/field fieldLabel='ваш псевдоним' fieldName='nickname' inputType='text' noteText='под этим именем вы будете публиковаться' absolutePathToFieldIcon='/img/iconsSolidColor/Pen.svg'}}
+            {{> errorNote/errorNote }}
+            <button type="submit" class="button-text button-text_accent">отправить</button>
+        </form>
+    </main>
+    <script type="module" src="/pages/singUp/singUp.js"></script>
+</body>
+</html>
