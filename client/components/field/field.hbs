@@ -1,8 +1,8 @@
 <div class="field field_error">
-    <input class="field__input" type="{{inputType}}" name="passcode" id="pass" placeholder=" ">
+    <input class="field__input" data-role="input-field" type="{{inputType}}" name="{{fieldName}}" placeholder="">
     <div class="field__icon-and-name">
         <img class="field__icon" src="{{absolutePathToFieldIcon}}">
-        <p class="field__name">{{fieldName}}</p>
+        <p class="field__name">{{fieldLabel}}</p>
     </div>
     {{!-- //TODO: Не выводить блок field__hint-and-error если noteText и errorMessage пустые --}}
     <div class="field__hint-and-error">
