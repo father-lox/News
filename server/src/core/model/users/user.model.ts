@@ -15,7 +15,7 @@ Users.init({
         autoIncrement: true
     },
     idRole: {
-        type: Sequelize.TINYINT,
+        type: Sequelize.INTEGER,
         allowNull: false
     },
     login: {

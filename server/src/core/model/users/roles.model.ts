@@ -8,7 +8,7 @@ export default class Roles extends Sequelize.Model {
 
 Roles.init({
     idRole: {
-        type: Sequelize.TINYINT,
+        type: Sequelize.INTEGER,
         primaryKey: true,
         allowNull: false,
         autoIncrement: true

@@ -30,7 +30,7 @@
     }
 
     &__icon-and-name {
-        $top-position: $padding-top;
+        $top-position: 50%;
         $left-position: $padding-left;
 
         position: absolute;
@@ -40,7 +40,7 @@
         order: -1;
         margin: 0 0 8rem;
         pointer-events: none;
-        translate: all 1s;
+        transform: translateY(-50%);
     }
 
     &__icon {
@@ -72,10 +72,9 @@
         &:focus + .field__icon-and-name, 
         &:focus-visible + .field__icon-and-name, 
         &:not(:placeholder-shown) + .field__icon-and-name {
-            position: relative;
+            position: static;
             pointer-events: none;
-            top: 0;
-            left: 0;
+            transform: none;
         }
     
         &:focus ~ .field__hint-and-error, 
