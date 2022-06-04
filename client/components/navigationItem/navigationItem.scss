@@ -1,0 +1,15 @@
+.navigation-item {
+    &__image {
+        width: 15rem;
+        margin: 0 6rem 0 0;
+        color: $accent-color;
+    }
+
+    &__link {
+        display: flex;
+        align-items: center;
+        color: $accent-color;
+        @include setFontButton();
+        text-decoration: none;
+    }
+}
