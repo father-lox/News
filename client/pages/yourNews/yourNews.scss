@@ -1,0 +1,61 @@
+@import '../../styles/general.scss';
+
+@import '../../components/newsPublickStatistics/newsPublickStatistics.scss';
+@import '../../components/adminPageTitle/adminPageTitle.scss';
+@import '../../components/navigation/navigation.scss';
+@import '../../components/navigationItem/navigationItem.scss';
+
+.published-news-list {
+    display: grid;
+    grid-template-columns: calc(50% - 25rem) calc(50% - 25rem);
+    gap: 50rem;
+    max-width: 100%;
+
+    &__title, &__comment {
+        overflow: hidden;
+    }
+
+    &__title {
+        margin: 0 0 3rem;
+        @include setFontNewsTitle(20rem);
+        max-height: 30rem;
+        color: $tamahagane-color;
+
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+
+    &__comment {
+        margin: 0 0 13rem;
+        @include setFontDefault();
+        max-height: 40rem;
+        color: $black-color;
+
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+    }
+}
+
+.your-news {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 860rem;
+    margin: 0 auto;
+    min-height: 100vh;
+    padding: 0 0 100rem;
+
+    .navigation {
+        width: 100%;
+        margin: 20rem 0 60rem;
+    }
+
+    .admin-page-title {
+        margin: 0 0 60rem;
+    }
+}
+
+.published-news {
+    max-width: 100%;
+}

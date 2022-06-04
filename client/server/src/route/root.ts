@@ -23,4 +23,8 @@ route.get('/singup', async (req, res) => {
     res.render('singUp/singUp.hbs', {layout: false})
 })
 
+route.get('/your-news', async (req, res) => {
+    res.render('yourNews/yourNews.hbs', {layout: false})
+})
+
 export default route
