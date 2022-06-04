@@ -1,3 +1,6 @@
+import './sendComment.js';
+import sendComment from './sendComment.js';
+
 const selectorBody: string = 'body';
 const selectorButtonShowComments: string = '.news [data-role=news-comment-button]';
 const domBody: HTMLBodyElement = document.querySelector(selectorBody) as HTMLBodyElement;
@@ -12,3 +15,5 @@ domBody.addEventListener('click', (event) : void => {
     const comments: HTMLDivElement = document.querySelector('.news [data-role=news-comments-section]') as HTMLDivElement;
     comments.classList.toggle('hidden')
 });
+
+sendComment();

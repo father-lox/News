@@ -1,4 +1,4 @@
-<div class="news">
+<div class="news" data-news-id="{{ context.idNews }}">
     <h2 class="news__title" data-role="news-title">{{ context.heading }}</h2>
     {{> comment/comment isWriterComment="true"}}
     <div class="news__controllers">
@@ -14,9 +14,9 @@
         {{> commentList/commentList }}
     </div>
 
-    <div class="news__comment-form">
-        {{> field/field absolutePathToFieldIcon='/img/iconTwoColors/Chat.svg' inputType='text' fieldName='Введите ваш комментарий'}}
-        <button class="news__send-comment button-text button-text_accent">Отправить</button>
-    </div>
+    <form id="send-comment-form" class="news__comment-form">
+        {{> field/field absolutePathToFieldIcon='/img/iconTwoColors/Chat.svg' errorMessage=' ' inputType='text' fieldName='content' fieldLabel='Введите ваш комментарий'}}
+        <button id="send-comment" class="news__send-comment button-text button-text_accent">Отправить</button>
+    </form>
 
 </div>
