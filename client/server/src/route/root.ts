@@ -10,4 +10,13 @@ route.get('/', async (req, res) => {
     res.render('index/index.hbs', {layout: false, context: context})
 })
 
+
+route.get('/create-news', async (req, res) => {
+    res.render('write/writeNews.hbs', {layout: false})
+})
+
+route.get('/singin', async (req, res) => {
+    res.render('singIn/singIn.hbs', {layout: false})
+})
+
 export default route
