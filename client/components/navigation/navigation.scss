@@ -1,0 +1,9 @@
+.navigation {
+    &__list-links {
+        display: flex;
+
+        .navigation-item:not(:last-child) {
+            margin: 0 27rem 0 0;
+        }
+    }
+}
