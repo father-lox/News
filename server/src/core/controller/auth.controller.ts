@@ -6,6 +6,7 @@ import ApiError from "../../error/ApiError";
 import jwt from "jsonwebtoken";
 import {RoleEnum} from "../model/users/roles.model";
 import userService from "../service/user/user.service";
+import {sendVerifyWriter} from "../../share/sendEmail";
 
 
 class AuthController {
@@ -19,8 +20,7 @@ class AuthController {
         })
         if (user == null) {
             next(ApiError.BadRequest('user not found'))
-        }
-        else {
+        } else {
             let hash = <string>user?.password?.replace(new RegExp(' ', 'g'), '');
             if (await bcrypt.compare(password, hash)) {
                 let token = jwt.sign({
@@ -37,9 +37,8 @@ class AuthController {
                     httpOnly: true
                 })
 
-                res.json({ token })
-            }
-            else {
+                res.json({token})
+            } else {
                 next(ApiError.BadRequest('password does not match'))
             }
         }
@@ -60,23 +59,49 @@ class AuthController {
         try {
             await userService.create({login, password, email}, RoleEnum.READER);
             res.sendStatus(200)
-        }
-        catch (e) {
+        } catch (e) {
             return next(e)
         }
     }
 
-    async register_writer(req: Request, res: Response, next: NextFunction) {
-        let {login, password, email} = req.body
-        if (login == null || password == null || email == null) {
+    async create_writer_request(req: Request, res: Response, next: NextFunction) {
+        let {name, description, email, redirect_url} = req.body
+        if (name == null || description == null || email == null || redirect_url == null) {
             return next(ApiError.BadRequest('invalid body params'))
         }
 
         try {
-            await userService.create({login, password, email}, RoleEnum.WRITER);
-            res.sendStatus(200)
+            sendVerifyWriter(email, name, redirect_url)
         }
         catch (e) {
+            return next(e)
+        }
+
+        let token = jwt.sign({value: email}, app_config.key, {expiresIn: '30d'})
+        res.cookie('register_writer', token, {
+            maxAge: 1000 * 60 * 60 * 24 * 30
+        })
+        res.sendStatus(200)
+    }
+
+    async register_writer(req: Request, res: Response, next: NextFunction) {
+        let {login, password} = req.body
+        if (login == null || password == null) {
+            return next(ApiError.BadRequest('invalid body params'))
+        }
+
+        let token = req.cookies['register_writer']
+
+        if (token == null) {
+            return next(ApiError.Forbidden('token has expired'))
+        }
+
+        try {
+            let e = <any>jwt.verify(token, app_config.key)
+            await userService.create({login, password, email: e.value}, RoleEnum.WRITER);
+            res.clearCookie('register_writer')
+            res.sendStatus(200)
+        } catch (e) {
             return next(e)
         }
     }

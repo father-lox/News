@@ -8,6 +8,7 @@ router.post('/login', authController.login)
 router.post('/logout', authController.logout)
 router.post('/registration', authController.register)
 router.post('/registration_writer', authController.register_writer)
+router.post('/create_request', authController.create_writer_request)
 router.post('/token', (req, res) => {
     res.json(res.locals["user"])
 })
