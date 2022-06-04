@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/pages/makePost/makePost.css">
+    <title>News Sing Un</title>
+</head>
+
+<body class="your-news">
+    <nav class="navigation">
+        <ul class="navigation__list-links">
+            {{> navigationItem/navigationItem
+                path='/your-news'
+                imageAbsolutePath='/img/iconsSolidRedColor/Home.svg'
+                label='опубликованное'
+            }}
+            {{> navigationItem/navigationItem
+                path='/write'
+                imageAbsolutePath='/img/iconsSolidColor/Pen.svg'
+                label='написать'
+            }}
+        </ul>
+    </nav>
+    <main class="make-post-wrapper">
+        <form class="make-post" id="make-form">
+            <textarea class="make-post__input make-post__input_title" placeholder="Напечатай тут свой заголовок. Он должен быть коротким и цепким, но желтушным" required></textarea>        
+            <textarea class="make-post__input make-post__input_comment" placeholder="Оставь свой комментарий. Здесь ты можешь высказать свое отношение к теме, поделиться мыслями, дополнить заголовок подробностями и деталями или построить небольшой диалог с читателем, побудив его к активности под записью." required></textarea>     
+        </form>
+    </main>
+    <script src="/pages/makePost/makePost.js"></script>
+</body>
+
+</html>

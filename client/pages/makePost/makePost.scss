@@ -1,0 +1,57 @@
+@import '../../styles/general.scss';
+
+@import '../../components/navigation/navigation.scss';
+@import '../../components/navigationItem/navigationItem.scss';
+
+
+.make-post {
+    max-width: 600rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &__input {
+        resize: none;
+        width: 100%;
+        color: $tamahagane-color;
+        outline: none;
+        border: none;
+
+        &_title {
+            @include setFontNewsTitle();
+        }
+
+        &_comment {
+            @include setFontDefault();
+            height: 95rem;
+        }
+
+        &:hover {
+            color: $accent-color;
+        }
+
+        &:focus, &:focus-visible {
+            color: $black-color;
+            height: min-content;
+        }
+
+        &:not(:first-child) {
+            margin: 25rem 0 0;
+        }
+    }
+}
+
+.make-post-wrapper {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body {
+    max-width: 860rem;
+    margin: 0 auto;
+}
