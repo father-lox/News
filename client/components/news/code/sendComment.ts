@@ -28,10 +28,11 @@ export default function sendComment(): void {
                 email: emailUser
             })
         }).then(res => {
-            if (res.status === 400) {
+            if (res.status === 200) {
                 alert('Комментарий отправлен');
+                commentForm.reset();
             }
-        }).catch(res => console.log(res));
+        }).catch(res => alert(''));
     })
 }
 
