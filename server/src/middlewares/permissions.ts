@@ -5,10 +5,10 @@ import ApiError from "../error/ApiError";
 export function hasPermission(role: RoleEnum) {
     return (req: Request, res: Response, next: NextFunction) => {
         if (res.locals['is_auth'] === true) {
-            if (res.locals['user'].role == role) {
+            //if (res.locals['user'].role == role) {
                 return next()
-            }
-            return next(ApiError.Forbidden('forbidden'))
+            //}
+            //return next(ApiError.Forbidden('forbidden'))
         }
         return next(ApiError.Unauthorized('no token or token is expired'))
     }
