@@ -34,7 +34,7 @@ class AuthController {
                 res.clearCookie('authorization')
                 res.cookie('authorization', token, {
                     maxAge: 2 * 60 * 60 * 1000,
-                    httpOnly: true
+                    httpOnly: false
                 })
 
                 res.json({token})
@@ -79,7 +79,8 @@ class AuthController {
 
         let token = jwt.sign({value: email}, app_config.key, {expiresIn: '30d'})
         res.cookie('register_writer', token, {
-            maxAge: 1000 * 60 * 60 * 24 * 30
+            maxAge: 1000 * 60 * 60 * 24 * 30,
+            httpOnly: false
         })
         res.sendStatus(200)
     }

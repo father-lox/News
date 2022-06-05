@@ -66,7 +66,14 @@ class NewsService {
         return await models.News.findAll({
             where: {
                 idUser: userId
-            }
+            },
+            include: [
+                {model: m.Users},
+                {model: m.Views},
+                {model: m.Comments},
+                {model: m.Rubrics},
+                {model: m.PublisherPage, include: [{model: m.Publishers}]}
+            ]
         })
     }
 }

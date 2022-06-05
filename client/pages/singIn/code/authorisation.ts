@@ -11,6 +11,10 @@ export default function authorisation(data: object): void {
         } else {
             alert(`произошла ошибка - проверте логин и пароль`);
         }
+        return res.json()
+    }).then(text => {
+        console.log(text.token)
+        document.cookie=`authorization=${text.token}`
     }).catch(res => {
         alert('произошла ошибка отправки запроса');
     })

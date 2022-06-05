@@ -27,46 +27,17 @@
     <main class="published-news">
         {{> adminPageTitle/adminPageTitle title='Список ваших новостей' }}
         <ul class="published-news-list">
-            <li class="published-news-list__item">
-                <h2 class="published-news-list__title">Nisi, quam nisl est sed nulla sed. Ut sagittis consequat ultricies odio nisi, morbi placerat.</h2>
-                <p class="published-news-list__comment">Laoreet magna morbi pulvinar ullamcorper nec felis, pretium id. Potenti lacus felis tellus sit. In proin aliquam nisl mi feugiat sit. Nulla interdum in ut in. Enim tellus sit tincidunt ornare erat vitae egestas. Feugiat quis in mus viverra libero facilisis dignissim malesuada. Viverra at et at faucibus tempor in nibh.</p>
-                {{> newsPublickStatistics/newsPublickStatistics}}
-            </li>
-            <li class="published-news-list__item">
-                <h2 class="published-news-list__title">Nisi, quam nisl est sed nulla sed. Ut sagittis consequat ultricies odio nisi, morbi placerat.</h2>
-                <p class="published-news-list__comment">Laoreet magna morbi pulvinar ullamcorper nec felis, pretium id. Potenti lacus felis tellus sit. In proin aliquam nisl mi feugiat sit. Nulla interdum in ut in. Enim tellus sit tincidunt ornare erat vitae egestas. Feugiat quis in mus viverra libero facilisis dignissim malesuada. Viverra at et at faucibus tempor in nibh.</p>
-                {{> newsPublickStatistics/newsPublickStatistics}}
-            </li>
-            <li class="published-news-list__item">
-                <h2 class="published-news-list__title">Nisi, quam nisl est sed nulla sed. Ut sagittis consequat ultricies odio nisi, morbi placerat.</h2>
-                <p class="published-news-list__comment">Laoreet magna morbi pulvinar ullamcorper nec felis, pretium id. Potenti lacus felis tellus sit. In proin aliquam nisl mi feugiat sit. Nulla interdum in ut in. Enim tellus sit tincidunt ornare erat vitae egestas. Feugiat quis in mus viverra libero facilisis dignissim malesuada. Viverra at et at faucibus tempor in nibh.</p>
-                {{> newsPublickStatistics/newsPublickStatistics}}
-            </li>
-            <li class="published-news-list__item">
-                <h2 class="published-news-list__title">Nisi, quam nisl est sed nulla sed. Ut sagittis consequat ultricies odio nisi, morbi placerat.</h2>
-                <p class="published-news-list__comment">Laoreet magna morbi pulvinar ullamcorper nec felis, pretium id. Potenti lacus felis tellus sit. In proin aliquam nisl mi feugiat sit. Nulla interdum in ut in. Enim tellus sit tincidunt ornare erat vitae egestas. Feugiat quis in mus viverra libero facilisis dignissim malesuada. Viverra at et at faucibus tempor in nibh.</p>
-                {{> newsPublickStatistics/newsPublickStatistics}}
-            </li>
-            <li class="published-news-list__item">
-                <h2 class="published-news-list__title">Nisi, quam nisl est sed nulla sed. Ut sagittis consequat ultricies odio nisi, morbi placerat.</h2>
-                <p class="published-news-list__comment">Laoreet magna morbi pulvinar ullamcorper nec felis, pretium id. Potenti lacus felis tellus sit. In proin aliquam nisl mi feugiat sit. Nulla interdum in ut in. Enim tellus sit tincidunt ornare erat vitae egestas. Feugiat quis in mus viverra libero facilisis dignissim malesuada. Viverra at et at faucibus tempor in nibh.</p>
-                {{> newsPublickStatistics/newsPublickStatistics}}
-            </li>
-            <li class="published-news-list__item">
-                <h2 class="published-news-list__title">Nisi, quam nisl est sed nulla sed. Ut sagittis consequat ultricies odio nisi, morbi placerat.</h2>
-                <p class="published-news-list__comment">Laoreet magna morbi pulvinar ullamcorper nec felis, pretium id. Potenti lacus felis tellus sit. In proin aliquam nisl mi feugiat sit. Nulla interdum in ut in. Enim tellus sit tincidunt ornare erat vitae egestas. Feugiat quis in mus viverra libero facilisis dignissim malesuada. Viverra at et at faucibus tempor in nibh.</p>
-                {{> newsPublickStatistics/newsPublickStatistics}}
-            </li>
-            <li class="published-news-list__item">
-                <h2 class="published-news-list__title">Nisi, quam nisl est sed nulla sed. Ut sagittis consequat ultricies odio nisi, morbi placerat.</h2>
-                <p class="published-news-list__comment">Laoreet magna morbi pulvinar ullamcorper nec felis, pretium id. Potenti lacus felis tellus sit. In proin aliquam nisl mi feugiat sit. Nulla interdum in ut in. Enim tellus sit tincidunt ornare erat vitae egestas. Feugiat quis in mus viverra libero facilisis dignissim malesuada. Viverra at et at faucibus tempor in nibh.</p>
-                {{> newsPublickStatistics/newsPublickStatistics}}
-            </li>
-            <li class="published-news-list__item">
-                <h2 class="published-news-list__title">Nisi, quam nisl est sed nulla sed. Ut sagittis consequat ultricies odio nisi, morbi placerat.</h2>
-                <p class="published-news-list__comment">Laoreet magna morbi pulvinar ullamcorper nec felis, pretium id. Potenti lacus felis tellus sit. In proin aliquam nisl mi feugiat sit. Nulla interdum in ut in. Enim tellus sit tincidunt ornare erat vitae egestas. Feugiat quis in mus viverra libero facilisis dignissim malesuada. Viverra at et at faucibus tempor in nibh.</p>
-                {{> newsPublickStatistics/newsPublickStatistics}}
-            </li>
+            {{#each context }}
+                <li class="published-news-list__item">
+                    <h2 class="published-news-list__title">
+                        {{ this.heading }}
+                    </h2>
+                    <p class="published-news-list__comment">
+                        {{ this.authorComment }}
+                    </p>
+                    {{> newsPublickStatistics/newsPublickStatistics this }}
+                </li>
+            {{/each}}
         </ul>
     </main>
 </body>
