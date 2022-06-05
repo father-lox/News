@@ -1,4 +1,5 @@
 import {showErrorNote, hideErrorNote, setOrUpdateErrorMessage} from '../../components/errorNote/errorNote.js';
+import authorization from './code/authorisation.js';
 
 function formValidation(form: HTMLFormElement, errorNode: HTMLDivElement): void {
     form.addEventListener('submit', (event) => {
@@ -21,6 +22,7 @@ function formValidation(form: HTMLFormElement, errorNode: HTMLDivElement): void 
         }
         else if (!errorMessage.length && errorNode.style.display !== 'none') {
             hideErrorNote(errorNoteDom);
+            authorization(userAuthorizationDate);
         }
     });
 }

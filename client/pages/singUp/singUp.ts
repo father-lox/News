@@ -1,4 +1,6 @@
 import {showErrorNote, hideErrorNote, setOrUpdateErrorMessage} from '../../components/errorNote/errorNote.js';
+import './code/registration.js';
+import registration from './code/registration.js';
 
 function formValidation(form: HTMLFormElement, errorNode: HTMLDivElement): void {
     form.addEventListener('submit', (event) => {
@@ -29,6 +31,9 @@ function formValidation(form: HTMLFormElement, errorNode: HTMLDivElement): void 
         }
         else if (!errorMessage.length && errorNode.style.display !== 'none') {
             hideErrorNote(errorNoteDom);
+            registration(userAuthorizationDate);
+            form.reset();
+            window.location.href = '/singin';
         }
     });
 }
@@ -45,5 +50,6 @@ function loginIsCorrect(value: string): boolean {
     const regex = /^[a-z0-9_-]{3,16}$/;
     return regex.test(value);
 }
+
 
 formValidation(document.getElementById('sing-up-from') as HTMLFormElement, document.querySelector('#sing-up-from [data-role=error-note]') as HTMLDivElement)

@@ -26,11 +26,12 @@
     </nav>
     <main class="make-post-wrapper">
         <form class="make-post" id="make-form">
-            <textarea class="make-post__input make-post__input_title" placeholder="Напечатай тут свой заголовок. Он должен быть коротким и цепким, но желтушным" required></textarea>        
-            <textarea class="make-post__input make-post__input_comment" placeholder="Оставь свой комментарий. Здесь ты можешь высказать свое отношение к теме, поделиться мыслями, дополнить заголовок подробностями и деталями или построить небольшой диалог с читателем, побудив его к активности под записью." required></textarea>     
+            <textarea name="heading" class="make-post__input make-post__input_title" placeholder="Напечатай тут свой заголовок. Он должен быть коротким и цепким, но желтушным" required></textarea>        
+            <textarea name="comment" class="make-post__input make-post__input_comment" placeholder="Оставь свой комментарий. Здесь ты можешь высказать свое отношение к теме, поделиться мыслями, дополнить заголовок подробностями и деталями или построить небольшой диалог с читателем, побудив его к активности под записью." required></textarea>     
+            <button type="submit">отправить</button>
         </form>
     </main>
-    <script src="/pages/makePost/makePost.js"></script>
+    <script type="module" src="/pages/makePost/makePost.js"></script>
 </body>
 
 </html>
