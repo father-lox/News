@@ -1,12 +1,12 @@
 <div class="news">
-    <h2 class="news__title" data-role="news-title">{{ context.heading }}</h2>
+    <h2 class="news__title" data-role="news-title">{{ heading }}</h2>
     {{> comment/comment isWriterComment="true"}}
     <div class="news__controllers">
         {{> newsPublickStatistics/newsPublickStatistics}}
         <button class="button-text" data-role="news-comment-button">Комментировать</button>
     </div>
     <div class="news__publisher-page-links">
-        {{#each context.PublisherPages}}
+        {{#each PublisherPages}}
             {{> publisherPageLink/publisherPageLink this }}
         {{/each}}
     </div>

@@ -4,10 +4,12 @@ import fetch from "node-fetch";
 const route = Router()
 
 route.get('/', async (req, res) => {
-    let result = await fetch('http://localhost:2000/api/news/byid?id=4').then(r => r.json())
-    let context = result
+    let result = await fetch('http://localhost:4000/api/news').then(r => r.json())
+    let context :any[] = result
     console.log(result);
-    context.commentCount = context.Comments.length
+    context.forEach(v => {
+        v.commentCount = v.Comments.length
+    })
     res.render('index/index.hbs', {layout: false, context: context})
 })
 

@@ -2,7 +2,7 @@
     <p class="comment__nickname {{#if isWriterComment}}comment__nickname_writer{{/if}}" data-role="news-author">
         Comment by
         {{#if isWriterComment}}
-            {{context.User.login}}
+            {{User.login}}
         {{else}}
              {{#if idUser }}
                  idUser
@@ -13,7 +13,7 @@
     </p>
     <p class="comment__text {{#if isWriterComment}}comment__text_writer{{/if}}" data-role="news-comment">
         {{#if isWriterComment}}
-            {{context.authorComment}}
+            {{authorComment}}
         {{else}}
             {{content}}
         {{/if}}
