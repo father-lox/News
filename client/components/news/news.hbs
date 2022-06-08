@@ -11,12 +11,11 @@
         {{/each}}
     </div>
     <div class="news__comments hidden" data-role="news-comments-section">
+        <form id="send-comment-form" class="news__comment-form">
+            {{> field/field absolutePathToFieldIcon='/img/iconTwoColors/Chat.svg' errorMessage=' ' inputType='text' fieldName='content' fieldLabel='Введите ваш комментарий'}}
+            <button id="send-comment" class="news__send-comment button-text button-text_accent">Отправить</button>
+        </form>
+        
         {{> commentList/commentList }}
     </div>
-
-    <div class="news__comment-form">
-        {{> field/field absolutePathToFieldIcon='/img/iconTwoColors/Chat.svg' inputType='text' fieldName='Введите ваш комментарий'}}
-        <button class="news__send-comment button-text button-text_accent">Отправить</button>
-    </div>
-
 </div>

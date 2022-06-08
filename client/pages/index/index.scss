@@ -5,12 +5,17 @@
 
 
 .index {
-    padding: 0 30rem;
+    padding: 30rem;
 
     .news-section {
         min-height: 100vh;
         display: flex;
         align-items: center;
         justify-content: center;
+        flex-direction: column;
+    }
+
+    .news {
+        width: 100%;
     }
 }

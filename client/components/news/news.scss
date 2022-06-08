@@ -10,6 +10,10 @@
     padding: 0 45rem 0 0;
     max-width: 600rem;
 
+    &:not(:last-child) {
+        margin: 0 0 30rem;
+    }
+
     &__title {
         @include setFontNewsTitle();
     }
