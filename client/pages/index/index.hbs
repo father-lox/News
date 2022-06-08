@@ -11,7 +11,11 @@
     {{> navigation/navigation }}
     <main class="index">
         <section class="news-section">
-            {{> 'news/news' }}
+
+            {{#each context}}
+                {{> 'news/news' this }}
+            {{/each}}
+
         </section>
     </main>
     <script type="module" src="/pages/index/index.js"></script>
