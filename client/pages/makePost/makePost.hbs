@@ -10,20 +10,7 @@
 </head>
 
 <body class="your-news">
-    <nav class="navigation">
-        <ul class="navigation__list-links">
-            {{> navigationItem/navigationItem
-                path='/your-news'
-                imageAbsolutePath='/img/iconsSolidRedColor/Home.svg'
-                label='опубликованное'
-            }}
-            {{> navigationItem/navigationItem
-                path='/write'
-                imageAbsolutePath='/img/iconsSolidColor/Pen.svg'
-                label='написать'
-            }}
-        </ul>
-    </nav>
+    {{> navigation/navigation }}
     <main class="make-post-wrapper">
         <form class="make-post" id="make-form">
             <textarea name="heading" class="make-post__input make-post__input_title" placeholder="Напечатай тут свой заголовок. Он должен быть коротким и цепким, но желтушным" required></textarea>        

@@ -1,9 +1,24 @@
 .navigation {
-    &__list-links {
+    width: 100%;
+    padding: 0 10%;
+
+
+    &__list {
         display: flex;
+        justify-content: space-evenly;
 
         .navigation-item:not(:last-child) {
             margin: 0 27rem 0 0;
+        }
+    }
+
+    &__list-item-link {
+        text-decoration: none;
+        color: $accent-color;
+        @include setFontDefault();
+
+        &:hover {
+            text-decoration: underline;
         }
     }
 }

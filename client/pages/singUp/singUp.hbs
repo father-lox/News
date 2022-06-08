@@ -8,16 +8,8 @@
     <title>News Sing Un</title>
 </head>
 <body>
+    {{> navigation/navigation }}
     <main class="sing-up">
-        <nav class="navigation">
-            <ul class="navigation__list-links">
-                {{> navigationItem/navigationItem
-                    path='/'
-                    imageAbsolutePath='/img/iconsSolidRedColor/Home.svg'
-                    label='Домой'
-                }}
-            </ul>
-        </nav>
         <form class="sing-up-form" id="sing-up-from" method="post" action="#">
             {{> field/field fieldLabel='ваш логин' fieldName='login' inputType='text' noteText='использоваться при авторизации' absolutePathToFieldIcon='/img/iconsSolidColor/User.svg'}}
             {{> field/field fieldLabel='ваш email' fieldName='email' inputType='email' noteText='используется для коммуникации' absolutePathToFieldIcon='/img/iconsSolidColor/User.svg'}}

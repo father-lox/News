@@ -10,20 +10,7 @@
 </head>
 
 <body class="your-news">
-    <nav class="navigation">
-        <ul class="navigation__list-links">
-            {{> navigationItem/navigationItem
-                path='/your-news'
-                imageAbsolutePath='/img/iconsSolidRedColor/Home.svg'
-                label='опубликованное'
-            }}
-            {{> navigationItem/navigationItem
-                path='/write'
-                imageAbsolutePath='/img/iconsSolidColor/Pen.svg'
-                label='написать'
-            }}
-        </ul>
-    </nav>
+    {{> navigation/navigation }}
     <main class="published-news">
         {{> adminPageTitle/adminPageTitle title='Список ваших новостей' }}
         <ul class="published-news-list">

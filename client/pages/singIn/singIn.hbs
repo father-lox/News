@@ -8,16 +8,8 @@
     <title>News Sing In</title>
 </head>
 <body>
+    {{> navigation/navigation }}
     <main class="sing-in">
-        <nav class="navigation">
-            <ul class="navigation__list-links">
-                {{> navigationItem/navigationItem
-                    path='/'
-                    imageAbsolutePath='/img/iconsSolidRedColor/Home.svg'
-                    label='Домой'
-                }}
-            </ul>
-        </nav>
         <form class="sing-in-form" id="sing-in-from" method="post" action="#">
             {{> field/field fieldLabel='ваш логин' fieldName='login' inputType='text' absolutePathToFieldIcon='/img/iconsSolidColor/User.svg'}}
             {{> field/field fieldLabel='ваш пароль' fieldName='password' inputType='password' absolutePathToFieldIcon='/img/iconsSolidColor/Lock.svg'}}
