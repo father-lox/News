@@ -47,4 +47,24 @@ route.get('/make-post', async (req, res) => {
     res.render('makePost/makePost.hbs', {layout: false})
 })
 
+route.post('/make-post-api', async (req, res) => {
+    try {
+        let result = await fetch('http://localhost:2000/api/news/create', {
+            method: 'POST',
+            headers: {
+                cookie: `authorization=${req.cookies['authorization']}`,
+                'Content-Type': 'application/json;charset=utf-8'
+            },
+            body: JSON.stringify(req.body)
+        })
+        console.log(result)
+        res.sendStatus(200)
+    }
+    catch (e) {
+        res.sendStatus(500)
+    }
+
+})
+
+
 export default route

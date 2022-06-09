@@ -1,5 +1,5 @@
 export default function publicNews(data: object): void {
-    fetch('http://localhost:2000/api/news/create', {
+    fetch('http://localhost:7293/make-post-api', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json;charset=utf-8'
